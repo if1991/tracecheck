@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraceCheck | File Integrity Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="terminal">
+        <header class="titlebar">
+            <span>■ TRACECHECK // v0.1</span>
+            <span>_ □ ×</span>
+        </header>
+
+        <div class="terminal-content">
+            <p class="system">SYSTEM INITIALISIERT // VERSION 0.1</p>
+
+            <h1>> TRACE_CHECK<span class="cursor">_</span></h1>
+
+            <p class="description">
+                DIGITALE INTEGRITÄTSPRÜFUNG<br>
+                SHA-256 / PYTHON / SQLITE
+            </p>
+
+            <div class="separator"></div>
+
+            <form method="POST" enctype="multipart/form-data">
+              <section>
+                 <p class="section-title">[01] DATEI AUSWÄHLEN</p>
+
+                <label for="file">> Datei laden:</label>
+                <input type="file" id="file" name="file" required>
+            </section>
+
+            <section>
+                <p class="section-title">[02] OPERATION</p>
+                 <div class="buttons">
+                   <button type="submit" name="aktion" value="registrieren">
+                     REGISTRIEREN
+                   </button>
+
+                   <button type="submit" name="aktion" value="pruefen">
+                     INTEGRITÄT PRÜFEN
+                  </button>
+                </div>
+            </section>
+            </form>
+
+             <section class="output">
+                <p class="section-title">[03] SYSTEM OUTPUT</p>
+                <p>&gt; {{ meldung }}</p>
+                <p>&gt; SYSTEM READY<span class="cursor">_</span></p>
+             </section>
+
+            <footer>
+                TRACECHECK // FILE INTEGRITY VERIFICATION
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
